@@ -13,8 +13,15 @@ $(document).ready(function() {
 
   var timer = 30;
   $("#start").on("click", start);
-  function start(thirtySeconds, 1000 * 2)
-  console.log(timer);
+  function start() {
+    setInterval(function() {
+      alert("Time's Up");
+    }, 1000 * 30);
+  }
+
+  clearInterval(function() {});
+
+  console.log(start);
 
   // trivia questions/answers:
   var trivia = [
