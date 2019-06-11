@@ -14,7 +14,7 @@ $(document).ready(function() {
   var incorrectAnswers = 0;
 
   // countdown timer that initiates when user clicks start and resets when all questions asked or time runsout.
-  var timer = 30;
+  var timer = 45;
   var intervalID;
   $(".start").on("click", start);
   function start() {
@@ -73,3 +73,9 @@ $(document).ready(function() {
     }
   ];
 });
+// need to pull the question into the html div
+$(".col1").html("<p>" + trivia.question + "</p>");
+
+// need to pull the answer array into the corresponding column
+
+// function for correct answer that increments score
