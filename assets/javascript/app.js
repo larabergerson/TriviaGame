@@ -10,29 +10,39 @@ $(document).ready(function() {
   //     $(".timer").text(timer);
   //     console.log(thirtySeconds);
   //   }
+  var correctAnswers = 0;
+  var incorrectAnswers = 0;
 
+  // countdown timer that initiates when user clicks start and resets when all questions asked or time runsout.
   var timer = 30;
-  $("#start").on("click", start);
+  var intervalID;
+  $(".start").on("click", start);
   function start() {
-    setInterval(function() {
-      alert("Time's Up");
-    }, 1000 * 30);
+    intervalID = setInterval(decrement, 1000);
   }
+  function decrement() {
+    timer--;
+    $(".timer").html("<h2>Time Remaining:</h2>" + "<h2>" + timer + "</h2>");
+    if (timer === 0) {
+      stop();
+      alert("Time's up!");
+    }
+  }
+  function stop() {
+    clearInterval(intervalID);
+  }
+  start();
 
-  clearInterval(function() {});
-
-  console.log(start);
-
-  // trivia questions/answers:
+  // Array for trivia questions/answers:
   var trivia = [
     {
-      question: "Who sings 'Let it go' in the movie Frozen?",
+      question: "Which character 'Let it go' in the movie Frozen?",
       choices: ["Anna", "Elsa", "Olaf", "Sven"],
       answer: "Elsa"
     },
     {
       question:
-        "In the movie 'Sing,' what song is featurd in the Gorilla's final performance?",
+        "In the movie 'Sing,' what song is featured in the Gorilla's final performance?",
       choices: [
         "Wannabe",
         "Lucky",

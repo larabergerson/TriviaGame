@@ -11,9 +11,9 @@ body {
 
 .timer {
   border: 2px solid black;
-  max-width: 200px;
+  max-width: 400px;
   padding: 20px;
-  margin-left: 40%;
+  margin-left: 35%;
   background-color: paleturquoise;
 }
 
